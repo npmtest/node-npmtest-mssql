@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-mssql/mssql/lib/connectionstring.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-mssql/node_modules/mssql/lib/connectionstring.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-mssql">npmtest-mssql (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-mssql/mssql/lib/connectionstring.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-mssql/node_modules/mssql/lib/connectionstring.js</span></h1>
     <h2>
         
         Statements: <span class="metric">5.16% <small>(8 / 155)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-mssql/mssql/lib/</a> &#187; connectionstring.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-mssql/node_modules/mssql/lib/</a> » connectionstring.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -788,222 +786,222 @@ const url = require('url')
 const qs = require('querystring')
 &nbsp;
 const IGNORE_KEYS = ['stream']
-const oror = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0, l = arguments.length; i &lt; l; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    if (arguments[i] !== null &amp;&amp; arguments[i] !== undefined) {</span>
-<span class="cstat-no" title="statement not covered" >      return arguments[i]</span>
+const oror = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  for (let i = 0, l = arguments.length; i &lt; l; i++) {</span>
+<span class="cstat-no" title="statement not covered">    if (arguments[i] !== null &amp;&amp; arguments[i] !== undefined) {</span>
+<span class="cstat-no" title="statement not covered">      return arguments[i]</span>
     }
   }
 }
 &nbsp;
-const parseConnectionURI = <span class="fstat-no" title="function not covered" >function (uri) {</span>
-<span class="cstat-no" title="statement not covered" >  const parsed = url.parse(uri)</span>
-<span class="cstat-no" title="statement not covered" >  let instance</span>
-<span class="cstat-no" title="statement not covered" >  let user</span>
-<span class="cstat-no" title="statement not covered" >  let password</span>
+const parseConnectionURI = <span class="fstat-no" title="function not covered">function (uri) {</span>
+<span class="cstat-no" title="statement not covered">  const parsed = url.parse(uri)</span>
+<span class="cstat-no" title="statement not covered">  let instance</span>
+<span class="cstat-no" title="statement not covered">  let user</span>
+<span class="cstat-no" title="statement not covered">  let password</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const path = parsed.pathname.substr(1).split('/')</span>
-<span class="cstat-no" title="statement not covered" >  if (path.length &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >    instance = path.shift()</span>
+<span class="cstat-no" title="statement not covered">  const path = parsed.pathname.substr(1).split('/')</span>
+<span class="cstat-no" title="statement not covered">  if (path.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered">    instance = path.shift()</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (parsed.auth) {</span>
-<span class="cstat-no" title="statement not covered" >    parsed.auth = parsed.auth.split(':')</span>
-<span class="cstat-no" title="statement not covered" >    user = parsed.auth.shift()</span>
-<span class="cstat-no" title="statement not covered" >    password = parsed.auth.join(':')</span>
+<span class="cstat-no" title="statement not covered">  if (parsed.auth) {</span>
+<span class="cstat-no" title="statement not covered">    parsed.auth = parsed.auth.split(':')</span>
+<span class="cstat-no" title="statement not covered">    user = parsed.auth.shift()</span>
+<span class="cstat-no" title="statement not covered">    password = parsed.auth.join(':')</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const port = parsed.port ? `,${parsed.port}` : (instance ? `\\${instance}` : '')</span>
-<span class="cstat-no" title="statement not covered" >  const object = {</span>
+<span class="cstat-no" title="statement not covered">  const port = parsed.port ? `,${parsed.port}` : (instance ? `\\${instance}` : '')</span>
+<span class="cstat-no" title="statement not covered">  const object = {</span>
     server: `${parsed.hostname}${port}`,
     uid: user || '',
     pwd: password || '',
     database: path[0]
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (parsed.query) {</span>
-<span class="cstat-no" title="statement not covered" >    const query = qs.parse(parsed.query)</span>
-<span class="cstat-no" title="statement not covered" >    for (const key in query) {</span>
-<span class="cstat-no" title="statement not covered" >      if (Object.prototype.hasOwnProperty.call(query, key)) {</span>
-<span class="cstat-no" title="statement not covered" >        const value = query[key]</span>
-<span class="cstat-no" title="statement not covered" >        if (key === 'domain') {</span>
-<span class="cstat-no" title="statement not covered" >          object.uid = `${value}\\${object.uid}`</span>
+<span class="cstat-no" title="statement not covered">  if (parsed.query) {</span>
+<span class="cstat-no" title="statement not covered">    const query = qs.parse(parsed.query)</span>
+<span class="cstat-no" title="statement not covered">    for (const key in query) {</span>
+<span class="cstat-no" title="statement not covered">      if (Object.prototype.hasOwnProperty.call(query, key)) {</span>
+<span class="cstat-no" title="statement not covered">        const value = query[key]</span>
+<span class="cstat-no" title="statement not covered">        if (key === 'domain') {</span>
+<span class="cstat-no" title="statement not covered">          object.uid = `${value}\\${object.uid}`</span>
         } else {
-<span class="cstat-no" title="statement not covered" >          object[key] = value</span>
+<span class="cstat-no" title="statement not covered">          object[key] = value</span>
         }
       }
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  Object.defineProperty(object, 'toString', {</span>
-    value <span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >      const out = []</span>
-<span class="cstat-no" title="statement not covered" >      for (const key in this) {</span>
-<span class="cstat-no" title="statement not covered" >        if (IGNORE_KEYS.indexOf(key) === -1) {</span>
-<span class="cstat-no" title="statement not covered" >          out.push(`${key}={${this[key]}}`)</span>
+<span class="cstat-no" title="statement not covered">  Object.defineProperty(object, 'toString', {</span>
+    value <span class="fstat-no" title="function not covered">() {</span>
+<span class="cstat-no" title="statement not covered">      const out = []</span>
+<span class="cstat-no" title="statement not covered">      for (const key in this) {</span>
+<span class="cstat-no" title="statement not covered">        if (IGNORE_KEYS.indexOf(key) === -1) {</span>
+<span class="cstat-no" title="statement not covered">          out.push(`${key}={${this[key]}}`)</span>
         }
       }
-<span class="cstat-no" title="statement not covered" >      return out.join(';')</span>
+<span class="cstat-no" title="statement not covered">      return out.join(';')</span>
     }
   })
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return object</span>
+<span class="cstat-no" title="statement not covered">  return object</span>
 }
 &nbsp;
-const parseConnectionString = <span class="fstat-no" title="function not covered" >function (string) {</span>
-<span class="cstat-no" title="statement not covered" >  let cursor = 0</span>
-<span class="cstat-no" title="statement not covered" >  let parsing = 'name'</span>
-<span class="cstat-no" title="statement not covered" >  let param = null</span>
-<span class="cstat-no" title="statement not covered" >  let buffer = ''</span>
-<span class="cstat-no" title="statement not covered" >  let quotes = null</span>
-<span class="cstat-no" title="statement not covered" >  const parsed = {}</span>
-<span class="cstat-no" title="statement not covered" >  const original = {}</span>
+const parseConnectionString = <span class="fstat-no" title="function not covered">function (string) {</span>
+<span class="cstat-no" title="statement not covered">  let cursor = 0</span>
+<span class="cstat-no" title="statement not covered">  let parsing = 'name'</span>
+<span class="cstat-no" title="statement not covered">  let param = null</span>
+<span class="cstat-no" title="statement not covered">  let buffer = ''</span>
+<span class="cstat-no" title="statement not covered">  let quotes = null</span>
+<span class="cstat-no" title="statement not covered">  const parsed = {}</span>
+<span class="cstat-no" title="statement not covered">  const original = {}</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  Object.defineProperty(parsed, '__original__', {value: original})</span>
-<span class="cstat-no" title="statement not covered" >  Object.defineProperty(parsed, 'toString', {</span>
-    value <span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >      const out = []</span>
-<span class="cstat-no" title="statement not covered" >      for (const key in this) {</span>
-<span class="cstat-no" title="statement not covered" >        if (IGNORE_KEYS.indexOf(key) === -1) {</span>
-<span class="cstat-no" title="statement not covered" >          const esc = original[key].escape || ['', '']</span>
-<span class="cstat-no" title="statement not covered" >          out.push(`${original[key].name}=${esc[0] || ''}${this[key]}${esc[1] || ''}`)</span>
+<span class="cstat-no" title="statement not covered">  Object.defineProperty(parsed, '__original__', {value: original})</span>
+<span class="cstat-no" title="statement not covered">  Object.defineProperty(parsed, 'toString', {</span>
+    value <span class="fstat-no" title="function not covered">() {</span>
+<span class="cstat-no" title="statement not covered">      const out = []</span>
+<span class="cstat-no" title="statement not covered">      for (const key in this) {</span>
+<span class="cstat-no" title="statement not covered">        if (IGNORE_KEYS.indexOf(key) === -1) {</span>
+<span class="cstat-no" title="statement not covered">          const esc = original[key].escape || ['', '']</span>
+<span class="cstat-no" title="statement not covered">          out.push(`${original[key].name}=${esc[0] || ''}${this[key]}${esc[1] || ''}`)</span>
         }
       }
-<span class="cstat-no" title="statement not covered" >      return out.join(';')</span>
+<span class="cstat-no" title="statement not covered">      return out.join(';')</span>
     }
   })
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  while (cursor &lt; string.length) {</span>
-<span class="cstat-no" title="statement not covered" >    const char = string.charAt(cursor)</span>
-<span class="cstat-no" title="statement not covered" >    switch (char) {</span>
+<span class="cstat-no" title="statement not covered">  while (cursor &lt; string.length) {</span>
+<span class="cstat-no" title="statement not covered">    const char = string.charAt(cursor)</span>
+<span class="cstat-no" title="statement not covered">    switch (char) {</span>
       case '=':
-<span class="cstat-no" title="statement not covered" >        if (parsing === 'name') {</span>
-<span class="cstat-no" title="statement not covered" >          buffer = buffer.trim()</span>
-<span class="cstat-no" title="statement not covered" >          param = buffer.toLowerCase()</span>
-<span class="cstat-no" title="statement not covered" >          original[param] = {name: buffer}</span>
-<span class="cstat-no" title="statement not covered" >          parsing = 'value'</span>
-<span class="cstat-no" title="statement not covered" >          buffer = ''</span>
+<span class="cstat-no" title="statement not covered">        if (parsing === 'name') {</span>
+<span class="cstat-no" title="statement not covered">          buffer = buffer.trim()</span>
+<span class="cstat-no" title="statement not covered">          param = buffer.toLowerCase()</span>
+<span class="cstat-no" title="statement not covered">          original[param] = {name: buffer}</span>
+<span class="cstat-no" title="statement not covered">          parsing = 'value'</span>
+<span class="cstat-no" title="statement not covered">          buffer = ''</span>
         } else {
-<span class="cstat-no" title="statement not covered" >          buffer += char</span>
+<span class="cstat-no" title="statement not covered">          buffer += char</span>
         }
-<span class="cstat-no" title="statement not covered" >        break</span>
+<span class="cstat-no" title="statement not covered">        break</span>
 &nbsp;
       case '\'': case '"':
-<span class="cstat-no" title="statement not covered" >        if (parsing === 'value') {</span>
-<span class="cstat-no" title="statement not covered" >          if (!buffer.trim().length) {</span>
+<span class="cstat-no" title="statement not covered">        if (parsing === 'value') {</span>
+<span class="cstat-no" title="statement not covered">          if (!buffer.trim().length) {</span>
             // value is wrapped in qotes
-<span class="cstat-no" title="statement not covered" >            original[param].escape = [char, char]</span>
-<span class="cstat-no" title="statement not covered" >            quotes = char</span>
-<span class="cstat-no" title="statement not covered" >            buffer = ''</span>
-          } else <span class="cstat-no" title="statement not covered" >if (quotes) {</span>
-<span class="cstat-no" title="statement not covered" >            if (char === quotes) {</span>
+<span class="cstat-no" title="statement not covered">            original[param].escape = [char, char]</span>
+<span class="cstat-no" title="statement not covered">            quotes = char</span>
+<span class="cstat-no" title="statement not covered">            buffer = ''</span>
+          } else <span class="cstat-no" title="statement not covered">if (quotes) {</span>
+<span class="cstat-no" title="statement not covered">            if (char === quotes) {</span>
               // found same char as used for wrapping quotes
-<span class="cstat-no" title="statement not covered" >              if (char === string.charAt(cursor + 1)) {</span>
+<span class="cstat-no" title="statement not covered">              if (char === string.charAt(cursor + 1)) {</span>
                 // escaped quote
-<span class="cstat-no" title="statement not covered" >                buffer += char</span>
-<span class="cstat-no" title="statement not covered" >                cursor++</span>
+<span class="cstat-no" title="statement not covered">                buffer += char</span>
+<span class="cstat-no" title="statement not covered">                cursor++</span>
               } else {
                 // end of value
-<span class="cstat-no" title="statement not covered" >                parsed[param] = buffer</span>
-<span class="cstat-no" title="statement not covered" >                param = null</span>
-<span class="cstat-no" title="statement not covered" >                parsing = null</span>
-<span class="cstat-no" title="statement not covered" >                buffer = ''</span>
-<span class="cstat-no" title="statement not covered" >                quotes = null</span>
+<span class="cstat-no" title="statement not covered">                parsed[param] = buffer</span>
+<span class="cstat-no" title="statement not covered">                param = null</span>
+<span class="cstat-no" title="statement not covered">                parsing = null</span>
+<span class="cstat-no" title="statement not covered">                buffer = ''</span>
+<span class="cstat-no" title="statement not covered">                quotes = null</span>
               }
             } else {
-<span class="cstat-no" title="statement not covered" >              buffer += char</span>
+<span class="cstat-no" title="statement not covered">              buffer += char</span>
             }
           } else {
-<span class="cstat-no" title="statement not covered" >            buffer += char</span>
+<span class="cstat-no" title="statement not covered">            buffer += char</span>
           }
         } else {
-<span class="cstat-no" title="statement not covered" >          throw new Error('Invalid connection string.')</span>
+<span class="cstat-no" title="statement not covered">          throw new Error('Invalid connection string.')</span>
         }
-<span class="cstat-no" title="statement not covered" >        break</span>
+<span class="cstat-no" title="statement not covered">        break</span>
 &nbsp;
       case '{':
-<span class="cstat-no" title="statement not covered" >        if (parsing === 'value') {</span>
-<span class="cstat-no" title="statement not covered" >          if (buffer.trim().length === 0) {</span>
+<span class="cstat-no" title="statement not covered">        if (parsing === 'value') {</span>
+<span class="cstat-no" title="statement not covered">          if (buffer.trim().length === 0) {</span>
             // value is wrapped in qotes
-<span class="cstat-no" title="statement not covered" >            original[param].escape = ['{', '}']</span>
-<span class="cstat-no" title="statement not covered" >            quotes = '{}'</span>
-<span class="cstat-no" title="statement not covered" >            buffer = ''</span>
+<span class="cstat-no" title="statement not covered">            original[param].escape = ['{', '}']</span>
+<span class="cstat-no" title="statement not covered">            quotes = '{}'</span>
+<span class="cstat-no" title="statement not covered">            buffer = ''</span>
           } else {
-<span class="cstat-no" title="statement not covered" >            buffer += char</span>
+<span class="cstat-no" title="statement not covered">            buffer += char</span>
           }
         } else {
-<span class="cstat-no" title="statement not covered" >          throw new Error('Invalid connection string.')</span>
+<span class="cstat-no" title="statement not covered">          throw new Error('Invalid connection string.')</span>
         }
-<span class="cstat-no" title="statement not covered" >        break</span>
+<span class="cstat-no" title="statement not covered">        break</span>
 &nbsp;
       case '}':
-<span class="cstat-no" title="statement not covered" >        if (parsing === 'value') {</span>
-<span class="cstat-no" title="statement not covered" >          if (quotes === '{}') {</span>
+<span class="cstat-no" title="statement not covered">        if (parsing === 'value') {</span>
+<span class="cstat-no" title="statement not covered">          if (quotes === '{}') {</span>
             // end of value
-<span class="cstat-no" title="statement not covered" >            parsed[param] = buffer</span>
-<span class="cstat-no" title="statement not covered" >            param = null</span>
-<span class="cstat-no" title="statement not covered" >            parsing = null</span>
-<span class="cstat-no" title="statement not covered" >            buffer = ''</span>
-<span class="cstat-no" title="statement not covered" >            quotes = null</span>
+<span class="cstat-no" title="statement not covered">            parsed[param] = buffer</span>
+<span class="cstat-no" title="statement not covered">            param = null</span>
+<span class="cstat-no" title="statement not covered">            parsing = null</span>
+<span class="cstat-no" title="statement not covered">            buffer = ''</span>
+<span class="cstat-no" title="statement not covered">            quotes = null</span>
           } else {
-<span class="cstat-no" title="statement not covered" >            buffer += char</span>
+<span class="cstat-no" title="statement not covered">            buffer += char</span>
           }
         } else {
-<span class="cstat-no" title="statement not covered" >          throw new Error('Invalid connection string.')</span>
+<span class="cstat-no" title="statement not covered">          throw new Error('Invalid connection string.')</span>
         }
-<span class="cstat-no" title="statement not covered" >        break</span>
+<span class="cstat-no" title="statement not covered">        break</span>
 &nbsp;
       case ';':
-<span class="cstat-no" title="statement not covered" >        if (parsing === 'value') {</span>
-<span class="cstat-no" title="statement not covered" >          if (quotes) {</span>
-<span class="cstat-no" title="statement not covered" >            buffer += char</span>
+<span class="cstat-no" title="statement not covered">        if (parsing === 'value') {</span>
+<span class="cstat-no" title="statement not covered">          if (quotes) {</span>
+<span class="cstat-no" title="statement not covered">            buffer += char</span>
           } else {
             // end of value
-<span class="cstat-no" title="statement not covered" >            parsed[param] = buffer</span>
-<span class="cstat-no" title="statement not covered" >            param = null</span>
-<span class="cstat-no" title="statement not covered" >            parsing = 'name'</span>
-<span class="cstat-no" title="statement not covered" >            buffer = ''</span>
+<span class="cstat-no" title="statement not covered">            parsed[param] = buffer</span>
+<span class="cstat-no" title="statement not covered">            param = null</span>
+<span class="cstat-no" title="statement not covered">            parsing = 'name'</span>
+<span class="cstat-no" title="statement not covered">            buffer = ''</span>
           }
         } else {
-<span class="cstat-no" title="statement not covered" >          buffer = ''</span>
-<span class="cstat-no" title="statement not covered" >          parsing = 'name'</span>
+<span class="cstat-no" title="statement not covered">          buffer = ''</span>
+<span class="cstat-no" title="statement not covered">          parsing = 'name'</span>
         }
-<span class="cstat-no" title="statement not covered" >        break</span>
+<span class="cstat-no" title="statement not covered">        break</span>
 &nbsp;
       default:
-<span class="cstat-no" title="statement not covered" >        buffer += char</span>
+<span class="cstat-no" title="statement not covered">        buffer += char</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    cursor++</span>
+<span class="cstat-no" title="statement not covered">    cursor++</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (parsing === 'value') {</span>
+<span class="cstat-no" title="statement not covered">  if (parsing === 'value') {</span>
     // end of value
-<span class="cstat-no" title="statement not covered" >    parsed[param] = buffer</span>
+<span class="cstat-no" title="statement not covered">    parsed[param] = buffer</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return parsed</span>
+<span class="cstat-no" title="statement not covered">  return parsed</span>
 }
 &nbsp;
-const resolveConnectionString = <span class="fstat-no" title="function not covered" >function (string, driver) {</span>
-<span class="cstat-no" title="statement not covered" >  const parsed = /^(mssql|tedious|msnodesql|tds):\/\//i.test(string) ? parseConnectionURI(string) : parseConnectionString(string)</span>
-<span class="cstat-no" title="statement not covered" >  const stream = (parsed.stream || '').toLowerCase()</span>
-<span class="cstat-no" title="statement not covered" >  const encrypt = (parsed.encrypt || '').toLowerCase()</span>
+const resolveConnectionString = <span class="fstat-no" title="function not covered">function (string, driver) {</span>
+<span class="cstat-no" title="statement not covered">  const parsed = /^(mssql|tedious|msnodesql|tds):\/\//i.test(string) ? parseConnectionURI(string) : parseConnectionString(string)</span>
+<span class="cstat-no" title="statement not covered">  const stream = (parsed.stream || '').toLowerCase()</span>
+<span class="cstat-no" title="statement not covered">  const encrypt = (parsed.encrypt || '').toLowerCase()</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (driver === 'msnodesqlv8') {</span>
-<span class="cstat-no" title="statement not covered" >    parsed.driver = 'SQL Server Native Client 11.0'</span>
+<span class="cstat-no" title="statement not covered">  if (driver === 'msnodesqlv8') {</span>
+<span class="cstat-no" title="statement not covered">    parsed.driver = 'SQL Server Native Client 11.0'</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (parsed.__original__) {</span>
-<span class="cstat-no" title="statement not covered" >      parsed.__original__.driver = {name: 'Driver', escape: ['{', '}']}</span>
+<span class="cstat-no" title="statement not covered">    if (parsed.__original__) {</span>
+<span class="cstat-no" title="statement not covered">      parsed.__original__.driver = {name: 'Driver', escape: ['{', '}']}</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return {connectionString: parsed.toString()}</span>
+<span class="cstat-no" title="statement not covered">    return {connectionString: parsed.toString()}</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  let user = parsed.uid || parsed.uid || parsed['user id']</span>
-<span class="cstat-no" title="statement not covered" >  let server = parsed.server || parsed.address || parsed.addr || parsed['data source'] || parsed['network address']</span>
+<span class="cstat-no" title="statement not covered">  let user = parsed.uid || parsed.uid || parsed['user id']</span>
+<span class="cstat-no" title="statement not covered">  let server = parsed.server || parsed.address || parsed.addr || parsed['data source'] || parsed['network address']</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const config = {</span>
+<span class="cstat-no" title="statement not covered">  const config = {</span>
     password: oror(parsed.pwd, parsed.password),
     database: oror(parsed.database, parsed['initial catalog']),
     connectionTimeout: oror(parsed.connectionTimeout, parsed.timeout, parsed['connect timeout'], parsed['connection timeout']),
@@ -1014,51 +1012,51 @@ const resolveConnectionString = <span class="fstat-no" title="function not cover
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (parsed.useUTC != null) {</span>
-<span class="cstat-no" title="statement not covered" >    const utc = parsed.useUTC.toLowerCase()</span>
-<span class="cstat-no" title="statement not covered" >    config.options.useUTC = utc === 'true' || utc === 'yes' || utc === '1'</span>
+<span class="cstat-no" title="statement not covered">  if (parsed.useUTC != null) {</span>
+<span class="cstat-no" title="statement not covered">    const utc = parsed.useUTC.toLowerCase()</span>
+<span class="cstat-no" title="statement not covered">    config.options.useUTC = utc === 'true' || utc === 'yes' || utc === '1'</span>
   }
-<span class="cstat-no" title="statement not covered" >  if (config.connectionTimeout != null) {</span>
-<span class="cstat-no" title="statement not covered" >    config.connectionTimeout = parseInt(config.connectionTimeout, 10)</span>
+<span class="cstat-no" title="statement not covered">  if (config.connectionTimeout != null) {</span>
+<span class="cstat-no" title="statement not covered">    config.connectionTimeout = parseInt(config.connectionTimeout, 10)</span>
   }
-<span class="cstat-no" title="statement not covered" >  if (config.requestTimeout != null) {</span>
-<span class="cstat-no" title="statement not covered" >    config.requestTimeout = parseInt(config.requestTimeout, 10)</span>
-  }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  if (/^(.*)\\(.*)$/.exec(user)) {</span>
-<span class="cstat-no" title="statement not covered" >    config.domain = RegExp.$1</span>
-<span class="cstat-no" title="statement not covered" >    user = RegExp.$2</span>
+<span class="cstat-no" title="statement not covered">  if (config.requestTimeout != null) {</span>
+<span class="cstat-no" title="statement not covered">    config.requestTimeout = parseInt(config.requestTimeout, 10)</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (server) {</span>
-<span class="cstat-no" title="statement not covered" >    server = server.trim()</span>
+<span class="cstat-no" title="statement not covered">  if (/^(.*)\\(.*)$/.exec(user)) {</span>
+<span class="cstat-no" title="statement not covered">    config.domain = RegExp.$1</span>
+<span class="cstat-no" title="statement not covered">    user = RegExp.$2</span>
+  }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (/^np:/i.test(server)) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Connection via Named Pipes is not supported.')</span>
+<span class="cstat-no" title="statement not covered">  if (server) {</span>
+<span class="cstat-no" title="statement not covered">    server = server.trim()</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (/^np:/i.test(server)) {</span>
+<span class="cstat-no" title="statement not covered">      throw new Error('Connection via Named Pipes is not supported.')</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (/^tcp:/i.test(server)) {</span>
-<span class="cstat-no" title="statement not covered" >      server = server.substr(4)</span>
+<span class="cstat-no" title="statement not covered">    if (/^tcp:/i.test(server)) {</span>
+<span class="cstat-no" title="statement not covered">      server = server.substr(4)</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (/^(.*)\\(.*)$/.exec(server)) {</span>
-<span class="cstat-no" title="statement not covered" >      server = RegExp.$1</span>
-<span class="cstat-no" title="statement not covered" >      config.options.instanceName = RegExp.$2</span>
+<span class="cstat-no" title="statement not covered">    if (/^(.*)\\(.*)$/.exec(server)) {</span>
+<span class="cstat-no" title="statement not covered">      server = RegExp.$1</span>
+<span class="cstat-no" title="statement not covered">      config.options.instanceName = RegExp.$2</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (/^(.*),(.*)$/.exec(server)) {</span>
-<span class="cstat-no" title="statement not covered" >      server = RegExp.$1.trim()</span>
-<span class="cstat-no" title="statement not covered" >      config.port = parseInt(RegExp.$2.trim(), 10)</span>
+<span class="cstat-no" title="statement not covered">    if (/^(.*),(.*)$/.exec(server)) {</span>
+<span class="cstat-no" title="statement not covered">      server = RegExp.$1.trim()</span>
+<span class="cstat-no" title="statement not covered">      config.port = parseInt(RegExp.$2.trim(), 10)</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (server === '.' || server === '(.)' || server.toLowerCase() === '(localdb)' || server.toLowerCase() === '(local)') {</span>
-<span class="cstat-no" title="statement not covered" >      server = 'localhost'</span>
+<span class="cstat-no" title="statement not covered">    if (server === '.' || server === '(.)' || server.toLowerCase() === '(localdb)' || server.toLowerCase() === '(local)') {</span>
+<span class="cstat-no" title="statement not covered">      server = 'localhost'</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  config.user = user</span>
-<span class="cstat-no" title="statement not covered" >  config.server = server</span>
-<span class="cstat-no" title="statement not covered" >  return config</span>
+<span class="cstat-no" title="statement not covered">  config.user = user</span>
+<span class="cstat-no" title="statement not covered">  config.server = server</span>
+<span class="cstat-no" title="statement not covered">  return config</span>
 }
 &nbsp;
 module.exports = {
@@ -1067,10 +1065,11 @@ module.exports = {
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 07:37:04 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sun Apr 16 2017 09:14:21 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
