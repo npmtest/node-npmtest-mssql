@@ -1,7 +1,7 @@
 # test coverage for  [mssql (v4.0.1)](https://github.com/patriksimek/node-mssql#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-mssql.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mssql) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mssql.svg)](https://travis-ci.org/npmtest/node-npmtest-mssql)
 #### Microsoft SQL Server client for Node.js.
 
-[![NPM](https://nodei.co/npm/mssql.png?downloads=true)](https://www.npmjs.com/package/mssql)
+[![NPM](https://nodei.co/npm/mssql.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mssql)
 
 | git-branch : | [alpha](https://github.com/npmtest/node-npmtest-mssql/tree/alpha)|
 |--:|:--|
@@ -9,11 +9,11 @@
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-mssql/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-mssql/build/test-report.html)|
 | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-mssql/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-mssql/tree/gh-pages/build)|
 
-[![istanbul-coverage](https://npmtest.github.io/node-npmtest-mssql/build/screenCapture.buildCustomOrg.browser.coverage.html.png)](https://npmtest.github.io/node-npmtest-mssql/build/coverage.html/index.html)
+[![istanbul-coverage](https://npmtest.github.io/node-npmtest-mssql/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://npmtest.github.io/node-npmtest-mssql/build/coverage.html/index.html)
 
-[![test-report](https://npmtest.github.io/node-npmtest-mssql/build/screenCapture.buildCustomOrg.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmtest%252Fnode-npmtest-mssql%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-mssql/build/test-report.html)
+[![test-report](https://npmtest.github.io/node-npmtest-mssql/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-mssql/build/test-report.html)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-mssql/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-mssql%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-mssql/build/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-mssql/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-mssql/build/apidoc.html)
 
 ![npmPackageListing](https://npmtest.github.io/node-npmtest-mssql/build/screenCapture.npmPackageListing.svg)
 
@@ -76,13 +76,11 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "patriksimek",
-            "email": "patrik@patriksimek.cz"
+            "name": "patriksimek"
         }
     ],
     "name": "mssql",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/patriksimek/node-mssql.git"
