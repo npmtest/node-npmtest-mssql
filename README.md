@@ -1,6 +1,6 @@
 # npmtest-mssql
 
-#### test coverage for  [mssql (v4.0.1)](https://github.com/patriksimek/node-mssql#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-mssql.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mssql) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mssql.svg)](https://travis-ci.org/npmtest/node-npmtest-mssql)
+#### basic test coverage for  [mssql (v4.0.4)](https://github.com/patriksimek/node-mssql#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-mssql.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mssql) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mssql.svg)](https://travis-ci.org/npmtest/node-npmtest-mssql)
 
 #### Microsoft SQL Server client for Node.js.
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-mssql/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-mssql/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-mssql/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-mssql/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-mssql/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-mssql/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-mssql/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-mssql/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-mssql/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-mssql/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-mssql/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-mssql/build/coverage.html/index.html)
 
@@ -57,13 +57,13 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "5ac0028245f99a6bc8bd8dcd117c34244eba9f5b",
-        "tarball": "https://registry.npmjs.org/mssql/-/mssql-4.0.1.tgz"
+        "shasum": "416d67df7653536cb6384951891fa1a47572a49b",
+        "tarball": "https://registry.npmjs.org/mssql/-/mssql-4.0.4.tgz"
     },
     "engines": {
         "node": ">=4"
     },
-    "gitHead": "e36e30aba611866b2095f8f7f1405911f9d273ca",
+    "gitHead": "a16180bd4253656753093de08cb50a627808b6b2",
     "homepage": "https://github.com/patriksimek/node-mssql#readme",
     "keywords": [
         "database",
@@ -100,7 +100,7 @@
         "test-msnodesqlv8": "mocha test/msnodesqlv8",
         "test-tedious": "mocha test/tedious"
     },
-    "version": "4.0.1"
+    "version": "4.0.4"
 }
 ```
 
